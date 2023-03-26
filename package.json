@@ -1,0 +1,22 @@
+{
+  "name": "express-sample-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker run -d -p 80:3000 -v logs:/app/data --rm --name logsapp 0b97725f43ae",
+    "dev": "docker run -d -p 80:3000 -v /c/work/docker-node-app:/app -v /app/node_modules -v logs:/app/data --rm --name logsapp 0b97725f43ae",
+    "stop": "docker stop logsapp",
+    "restart": "docker start logsapp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
